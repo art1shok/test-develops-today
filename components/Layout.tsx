@@ -8,7 +8,17 @@ interface Props {
   children: JSX.Element[] | JSX.Element
 }
 
-const LayoutWraper = styled.div`
+export const Layout: React.FC<Props> = ({ children }) => (
+  <LayoutWrapper>
+    <Header />
+    <Content>
+      <Container>{children}</Container>
+    </Content>
+    <Footer />
+  </LayoutWrapper>
+);
+
+const LayoutWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -26,13 +36,3 @@ const Container = styled.div`
   width: 100%;
   padding: 0 10px;
 `;
-
-export const Layout: React.FC<Props> = ({ children }) => (
-  <LayoutWraper>
-    <Header />
-    <Content>
-      <Container>{children}</Container>
-    </Content>
-    <Footer />
-  </LayoutWraper>
-);

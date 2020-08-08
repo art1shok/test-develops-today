@@ -1,5 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
+
+export const Footer: FC = () => (
+  <FooterWrapper>
+    <FooterContainer>
+      <Copyrights
+        href="https://github.com/art1shok"
+        target="blank"
+      >
+        Made by Kvitka Artem
+      </Copyrights>
+    </FooterContainer>
+  </FooterWrapper>
+);
 
 const FooterContainer = styled.div`
   display: flex;
@@ -12,9 +25,9 @@ const FooterContainer = styled.div`
   margin: 0 auto;
 `;
 
-const FooterWraper = styled.div`
+const FooterWrapper = styled.div`
   background: #020202;
-   background: linear-gradient(90deg, #260507 0%, #5f0910 50%, #ca1d24 100%);
+  background: linear-gradient(90deg, #260507 0%, #5f0910 50%, #ca1d24 100%);
 `;
 
 const Copyrights = styled.a`
@@ -22,16 +35,3 @@ const Copyrights = styled.a`
   font-size: 20px;
   text-decoration: none;
 `;
-
-export const Footer = () => (
-  <FooterWraper>
-    <FooterContainer>
-      <Copyrights
-        href="https://github.com/art1shok"
-        target="blank"
-      >
-        Made by Kvitka Artem
-      </Copyrights>
-    </FooterContainer>
-  </FooterWraper>
-);

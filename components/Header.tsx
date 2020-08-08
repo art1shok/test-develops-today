@@ -1,6 +1,24 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
+
+export const Header: FC = () => (
+  <HeaderWrapper>
+    <HeaderContainer>
+      <Link href="/" passHref>
+        <LinkStyled>
+          Home
+        </LinkStyled>
+      </Link>
+      <LogoText>Post Page</LogoText>
+      <Link href="/posts/new" passHref>
+        <LinkStyled>
+          New Post
+        </LinkStyled>
+      </Link>
+    </HeaderContainer>
+  </HeaderWrapper>
+);
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -13,7 +31,7 @@ const HeaderContainer = styled.div`
   margin: 0 auto;
 `;
 
-const HeaderWraper = styled.div`
+const HeaderWrapper = styled.div`
   background: #020202;
   background: linear-gradient(90deg, #1a1932 0%, #121234 50%, #13069b 100%);
 
@@ -39,21 +57,3 @@ const LogoText = styled.p`
   font-size: 14px;
   padding: 5px;
 `;
-
-export const Header = () => (
-  <HeaderWraper>
-    <HeaderContainer>
-      <Link href="/" passHref>
-        <LinkStyled>
-          Home
-        </LinkStyled>
-      </Link>
-      <LogoText>Post Page</LogoText>
-      <Link href="/posts/new" passHref>
-        <LinkStyled>
-          New Post
-        </LinkStyled>
-      </Link>
-    </HeaderContainer>
-  </HeaderWraper>
-);

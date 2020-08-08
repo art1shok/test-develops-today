@@ -3,6 +3,7 @@ import { NextPage } from 'next';
 import Error from 'next/error';
 import styled from 'styled-components';
 import Head from 'next/head';
+import { AxiosResponse } from 'axios';
 import { apiService } from '../../services/apiService';
 import { Layout } from '../../components/Layout';
 
@@ -27,7 +28,7 @@ const Post: NextPage<Props> = ({ post }) => {
 };
 
 Post.getInitialProps = async ({ query }) => {
-  let response = null;
+  let response: null | AxiosResponse<DevelopsToday.Post> = null;
   try {
     response = await apiService.getPostById(typeof query.id === 'string' ? query.id : '0');
   } catch {
